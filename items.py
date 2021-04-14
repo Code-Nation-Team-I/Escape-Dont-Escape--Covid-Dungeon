@@ -91,7 +91,3 @@ class chocolate_Bar:
     health = 6
     attack = 9
     def = 5
-    
-
-
-

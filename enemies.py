@@ -15,8 +15,7 @@ class Maskless_Mark:
     def = 10
     health = 12
 
-
-
+    
 class Coughting_Chris:
     attack = 10
     def = 5
@@ -33,6 +32,3 @@ class Savage_Dog:
     attack = 12
     def = 7
     health = 7
-
-
-
