@@ -33,5 +33,3 @@ health = ("you have 10 hearts and everytime you die you lose one")
 defence = 10
 attack = 15
 backstory = ("hooray, you have defeated the boss. one piece collected, one more to go"
-
-
