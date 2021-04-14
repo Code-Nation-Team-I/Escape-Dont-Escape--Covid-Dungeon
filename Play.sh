@@ -1,5 +1,4 @@
 #! /bin/bash
-
 sudo docker system prune --all -f
 
 sudo docker build -t covid-dungeon .
