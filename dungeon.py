@@ -1,0 +1,444 @@
+#! /bin/env python3
+from characters import Test, Test2, Test3, Test4, Test5
+from enemies import TestA, TestB, TestC
+from items import Sword, Helmet
+from bosses import Boss1, Boss2, Boss3
+import random
+import os
+import sys
+
+# Intro here
+
+Character_List = ["Test","Test2","Test3","Test4","Test5"]
+print(*Character_List, sep = "\n")
+
+Selection = input("Select Your Character By Entering Character Name ")
+
+
+if Selection == "Test":
+    Character = Test
+    print("You Have Selected Test as your character")
+    print(Test.Attack, "Attack")
+    print(Test.Defence, "Defence")
+    print(Test.Health, "Health")
+    print(Test.backstory)
+
+            
+elif Selection == "Test2":
+    Character = Test2
+    print("You Have Selected Test2 as your character")
+    print(Test2.Attack, "Attack")
+    print(Test2.Defence, "Defence")
+    print(Test2.Health, "Health")
+    print(Test2.backstory)
+
+
+elif Selection == "Test3":
+    Character = Test3
+    print("You Have Selected Test3 as your character")
+    print(Test3.Attack, "Attack")
+    print(Test3.Defence, "Defence")
+    print(Test3.Health, "Health")
+    print(Test3.backstory)
+        
+            
+
+elif Selection == "Test4":
+    Character = Test4
+    print("You Have Selected Test4 as your character")
+    print(Test4.Attack, "Attack")
+    print(Test4.Defence, "Defence")
+    print(Test4.Health, "Health")
+    print(Test4.backstory)
+            
+
+elif Selection == "Test5":
+    Character = Test5
+    print("You Have Selected Test5 as your character")
+    print(Test5.Attack, "Attack")
+    print(Test5.Defence, "Defence")
+    print(Test5.Health, "Health")
+    print(Test5.backstory)
+
+        
+else:
+    print("Fatal Error.... Please Enter Valid Character Name")
+    os.execv(__file__, sys.argv)
+         
+   
+
+# Items List
+Item_List = [Sword, Helmet]
+
+# Item_A imported and picked at random.
+Item_A = Item_List[random.randrange(0,2)]
+
+# Item_A Name And Stats Printed
+print(f"Item_A is a {Item_A.Name} with the following stats:")
+
+if Item_A.Attack > 0:
+    print(Item_A.Attack, "Attack")
+
+elif Item_A.Defence > 0:
+    print(Item_A.Defence, "Defence")
+
+elif Item_A.Health > 0:
+    print(Item_A.Health, "Health") 
+
+
+
+# Item_B imported and picked at random.
+Item_B = Item_List[random.randrange(0,2)]
+
+# Item_B Name And Stats Printed
+print(f"Item_B is a {Item_B.Name} with the following stats:")
+
+if Item_B.Attack > 0:
+    print(Item_B.Attack, "Attack")
+
+elif Item_B.Defence > 0:
+    print(Item_B.Defence, "Defence")
+
+elif Item_B.Health > 0:
+    print(Item_B.Health, "Health") 
+
+
+
+# Item_C imported and picked at random.
+Item_C = Item_List[random.randrange(0,2)]
+
+# Item_C Name And Stats Printed
+print(f"Item_C is a {Item_C.Name} with the following stats:")
+
+if Item_C.Attack > 0:
+    print(Item_C.Attack, "Attack")
+
+elif Item_C.Defence > 0:
+    print(Item_C.Defence, "Defence")
+
+elif Item_C.Health > 0:
+    print(Item_C.Health, "Health") 
+
+
+
+Select_Starting_item = input("Select an item by typing A, B or C ")
+
+if Select_Starting_item == "A":
+    print(f"You have Taken a {Item_A.Name}")
+    
+    Character.Attack += Item_A.Attack
+    Character.Defence += Item_A.Defence
+    Character.Health += Item_A.Health
+    
+    print("Your New Character Stats Are:")
+    
+    print(Character.Attack, "Attack") 
+    print(Character.Defence, "Defence")
+    print(Character.Health, "Health")
+
+
+
+elif Select_Starting_item == "B":
+    print(f"You have Taken a {Item_B.Name}")
+    
+    Character.Attack += Item_B.Attack
+    Character.Defence += Item_B.Defence
+    Character.Health += Item_B.Health
+    
+    print("Your New Character Stats Are:")
+    
+    print(Character.Attack, "Attack") 
+    print(Character.Defence, "Defence")
+    print(Character.Health, "Health")
+
+
+
+elif Select_Starting_item == "C":
+    print(f"You have Taken a {Item_C.Name}")
+    
+    Character.Attack += Item_C.Attack
+    Character.Defence += Item_C.Defence
+    Character.Health += Item_C.Health
+    
+    print("Your New Character Stats Are:")
+    
+    print(Character.Attack, "Attack") 
+    print(Character.Defence, "Defence")
+    print(Character.Health, "Health")
+    
+
+
+# Lockdown I String
+
+
+# Choose Which Path You Will Take
+
+Select_First_Path = input("You Stumble Upon Two Forking Paths A And B You Take? ")
+
+
+
+if Select_First_Path == "A":
+    Enemy_List = [TestA, TestB, TestC] 
+    Enemy = Enemy_List[random.randrange(0,3)]
+    
+    print(f"You Slowly Creep down An Dark Alleyway And Suddely {Enemy.Name} Jumps out And Attacks You.")
+    
+    while Enemy.Health >= 0:
+    
+        Enemy_Attack = Enemy.Attack - Character.Defence
+        print(f"{Enemy.Name} Has Attacked You For {Enemy_Attack} Damage")
+        Character.Health -= Enemy_Attack
+        print(f"You Have {Character.Health} Health Remaining")
+
+        Character_Attack = Character.Attack - Enemy.Defence
+        print(f"You Attacked {Enemy.Name} For {Character_Attack} Damage")
+        Enemy.Health -= Character_Attack
+        print(f"{Enemy.Name} Has {Enemy.Health} Remaining")
+
+
+        if Character.Health <= 0:
+            print(f"You Were Defeated By {Enemy.Name} Game Over")
+            exit()
+
+
+        elif Enemy.Health <= 0:
+            print(f"You have Defeated {Enemy.Name}")
+            Increased_Attack = random.randint(0, 10)
+            Increased_Defence =  random.randint(0, 10)
+            Increased_Health =  random.randint(0, 10)
+
+            Character.Attack += Increased_Attack
+            Character.Defence += Increased_Defence
+            Character.Health += Increased_Health 
+
+            print("Your Combat Experience Has Increased Yours Character Stats To:")
+            print(f"{Character.Attack}, Attack")
+            print(f"{Character.Defence}, Defence")
+            print(f"{Character.Health}, Health")
+
+
+
+
+if Select_First_Path == "B":
+    Enemy_List = [TestA, TestB, TestC] 
+    Enemy = Enemy_List[random.randrange(0,3)] 
+
+    print(f"You Take A Right Down Market Street And You're Confronted By {Enemy.Name}")
+
+    while Enemy.Health >= 0:
+    
+        Enemy_Attack = Enemy.Attack - Character.Defence
+        print(f"{Enemy.Name} Has Attacked You For {Enemy_Attack} Damage")
+        Character.Health -= Enemy_Attack
+        print(f"You Have {Character.Health} Health Remaining")
+
+        Character_Attack = Character.Attack - Enemy.Defence
+        print(f"You Attacked {Enemy.Name} For {Character_Attack} Damage")
+        Enemy.Health -= Character_Attack
+        print(f"{Enemy.Name} Has {Enemy.Health} Remaining")
+
+
+        if Character.Health <= 0:
+            print(f"You Were Defeated By {Enemy.Name} Game Over")
+            exit()
+
+
+        elif Enemy.Health <= 0:
+            print(f"You have Defeated {Enemy.Name}")
+            Increased_Attack = random.randint(0, 10)
+            Increased_Defence =  random.randint(0, 10)
+            Increased_Health =  random.randint(0, 10)
+
+            Character.Attack += Increased_Attack
+            Character.Defence += Increased_Defence
+            Character.Health += Increased_Health 
+
+            print("Your Combat Experience Has Increased Yours Character Stats To:")
+            print(f"{Character.Attack}, Attack")
+            print(f"{Character.Defence}, Defence")
+            print(f"{Character.Health}, Health")
+
+
+
+# Second Combat
+
+    Enemy_List = [TestA, TestB, TestC] 
+    Enemy = Enemy_List[random.randrange(0,3)]  
+
+    print(f"You Thought It Was All Over When {Enemy.Name} Pounces On You")
+    
+    while Enemy.Health >= 0:
+    
+        Enemy_Attack = Enemy.Attack - Character.Defence
+        print(f"{Enemy.Name} Has Attacked You For {Enemy_Attack} Damage")
+        Character.Health -= Enemy_Attack
+        print(f"You Have {Character.Health} Health Remaining")
+
+        Character_Attack = Character.Attack - Enemy.Defence
+        print(f"You Attacked {Enemy.Name} For {Character_Attack} Damage")
+        Enemy.Health -= Character_Attack
+        print(f"{Enemy.Name} Has {Enemy.Health} Remaining")
+
+
+        if Character.Health <= 0:
+            print(f"You Were Defeated By {Enemy.Name} Game Over")
+            exit()
+
+
+        elif Enemy.Health <= 0:
+            print(f"You have Defeated {Enemy.Name}")
+            Increased_Attack = random.randint(0, 10)
+            Increased_Defence =  random.randint(0, 10)
+            Increased_Health =  random.randint(0, 10)
+
+            Character.Attack += Increased_Attack
+            Character.Defence += Increased_Defence
+            Character.Health += Increased_Health 
+
+            print("Your Combat Experience Has Increased Yours Character Stats To:")
+            print(f"{Character.Attack}, Attack")
+            print(f"{Character.Defence}, Defence")
+            print(f"{Character.Health}, Health")
+
+
+
+
+# Secondary items List Chooses
+# Item_A imported and picked at random.
+
+print("The Enemy You Deafted Had Some Items On Them:")
+Item_A = Item_List[random.randrange(0,2)]
+
+# Item_A Name And Stats Printed
+print(f"Item_A is a {Item_A.Name} with the following stats:")
+
+if Item_A.Attack > 0:
+    print(Item_A.Attack, "Attack")
+
+elif Item_A.Defence > 0:
+    print(Item_A.Defence, "Defence")
+
+elif Item_A.Health > 0:
+    print(Item_A.Health, "Health") 
+
+
+
+# Item_B imported and picked at random.
+Item_B = Item_List[random.randrange(0,2)]
+
+# Item_B Name And Stats Printed
+print(f"Item_B is a {Item_B.Name} with the following stats:")
+
+if Item_B.Attack > 0:
+    print(Item_B.Attack, "Attack")
+
+elif Item_B.Defence > 0:
+    print(Item_B.Defence, "Defence")
+
+elif Item_B.Health > 0:
+    print(Item_B.Health, "Health") 
+
+
+
+# Item_C imported and picked at random.
+Item_C = Item_List[random.randrange(0,2)]
+
+# Item_C Name And Stats Printed
+print(f"Item_C is a {Item_C.Name} with the following stats:")
+
+if Item_C.Attack > 0:
+    print(Item_C.Attack, "Attack")
+
+elif Item_C.Defence > 0:
+    print(Item_C.Defence, "Defence")
+
+elif Item_C.Health > 0:
+    print(Item_C.Health, "Health") 
+
+
+
+Select_Starting_item = input("Select an item by typing A, B or C ")
+
+if Select_Starting_item == "A":
+    print(f"You have Taken a {Item_A.Name}")
+    
+    Character.Attack += Item_A.Attack
+    Character.Defence += Item_A.Defence
+    Character.Health += Item_A.Health
+    
+    print("Your New Character Stats Are:")
+    
+    print(Character.Attack, "Attack") 
+    print(Character.Defence, "Defence")
+    print(Character.Health, "Health")
+
+
+
+elif Select_Starting_item == "B":
+    print(f"You have Taken a {Item_B.Name}")
+    
+    Character.Attack += Item_B.Attack
+    Character.Defence += Item_B.Defence
+    Character.Health += Item_B.Health
+    
+    print("Your New Character Stats Are:")
+    
+    print(Character.Attack, "Attack") 
+    print(Character.Defence, "Defence")
+    print(Character.Health, "Health")
+
+
+
+elif Select_Starting_item == "C":
+    print(f"You have Taken a {Item_C.Name}")
+    
+    Character.Attack += Item_C.Attack
+    Character.Defence += Item_C.Defence
+    Character.Health += Item_C.Health
+    
+    print("Your New Character Stats Are:")
+    
+    print(Character.Attack, "Attack") 
+    print(Character.Defence, "Defence")
+    print(Character.Health, "Health")
+
+
+
+
+# Boss Battle I
+Boss = Boss1
+print(f"You Are Nearing The End Of The First Lockdown But {Boss.Name} Stands In Your Way Prepare For Battle!")
+print(Boss.Backstory)
+
+while Boss.Health >= 0:
+    
+        Boss_Attack = Boss.Attack - Character.Defence
+        print(f"{Boss.Name} Has Attacked You For {Boss_Attack} Damage")
+        Character.Health -= Boss_Attack
+        print(f"You Have {Character.Health} Health Remaining")
+
+        Character_Attack = Character.Attack - Boss.Defence
+        print(f"You Attacked {Boss.Name} For {Character_Attack} Damage")
+        Boss.Health -= Character_Attack
+        print(f"{Boss.Name} Has {Boss.Health} Health Remaining")
+
+
+        if Character.Health <= 0:
+            print(f"You Were Defeated By {Boss.Name} Game Over")
+            exit()
+
+
+        elif Boss.Health <= 0:
+            print(f"You have Smited {Boss.Name}")
+            Increased_Attack = random.randint(0, 10)
+            Increased_Defence =  random.randint(0, 10)
+            Increased_Health =  random.randint(0, 10)
+
+            Character.Attack += Increased_Attack
+            Character.Defence += Increased_Defence
+            Character.Health += Increased_Health 
+
+            print(f"Your Scrap With {Boss.Name} Has Increased Yours Character Stats To:")
+            print(f"{Character.Attack}, Attack")
+            print(f"{Character.Defence}, Defence")
+            print(f"{Character.Health}, Health")
