@@ -1,3 +1,8 @@
+
+boss1 = Chris Whitty -Chief Medical Officer)
+boss2 = Matt Hancock (Secretary of State for Health)
+
+final boss = Boris Johnson (Prime Minister)
 class bosses
 start_bossess = ("welcome to the dungeon escape-don't-escape bosses, there are four tunnels,each tunnel contain a chest but two of the chest have a piece of your key to freedom)
 start_bosses = ("you must defeat a box in other to open their chest")
@@ -33,3 +38,4 @@ health = ("you have 10 hearts and everytime you die you lose one")
 defence = 10
 attack = 15
 backstory = ("hooray, you have defeated the boss. one piece collected, one more to go"
+
