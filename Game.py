@@ -1,93 +1,102 @@
 #! /bin/env python3
-from characters import Test, Test2, Test3, Test4, Test5
-from enemies import TestA, TestB, TestC
-from items import Sword, Helmet
-from bosses import Boss1, Boss2, Boss3
+from Assets.characters import Underpaid_NHS_Worker, Karen, Redundant_Robert, Pensioner_Pete, Teenage_Tyrant
+from Assets.enemies import Copper, Virus, Maskless_Mark, Coughing_Chris, Nosey_Neighbor, Savage_Dog
+from Assets.items import Tissue_Roll, Hand_Sanitizer, Used_Mask, Rubber_Gloves, Bin_Bag, Mop, Vaccine, Bleach, News_Paper, Broken_Brush, Costa_Coffee, Subway_Sandwich, Bottle_Of_Wine, Big_Mac, Chocolate_Bar
+from Assets.bosses import Chris_Whitty, Matt_Hancock, Boris_Johnson
 import time 
 import random
 import os
 import sys
 
-# Intro here
+# Intro
+
+print("You awaken to a new global threat!")
+time.sleep(1)
+print("The emergence of Covid-19 has catapulted the world into a state of total disarray...")
+time.sleep(1)
+
+
 
 #############################################################################
 ############################ CHARACTER SELECTION ############################
 #############################################################################
 
+
+
 print("The Playable Characters In This Game Are as Follows:")
 time.sleep(1)
 
-Character_List = ["Test","Test2","Test3","Test4","Test5"]
+Character_List = ["Underpaid_NHS_Worker","Karen","Redundant_Robert","Pensioner_Pete","Teenage_Tyrant"]
 print(*Character_List, sep = "\n")
 time.sleep(1)
 
 Selection = input("Select Your Character By Entering Character Name ")
 time.sleep(1)
 
-if Selection == "Test":
-    Character = Test
-    print("You Have Selected Test as your character")
+if Selection == "Underpaid_NHS_Worker":
+    Character = Underpaid_NHS_Worker
+    print(f"You Have Selected {Underpaid_NHS_Worker.Name} as your character")
     time.sleep(1)
-    print(Test.Attack, "Attack")
+    print(Underpaid_NHS_Worker.Attack, "Attack")
     time.sleep(1)
-    print(Test.Defence, "Defence")
+    print(Underpaid_NHS_Worker.Defence, "Defence")
     time.sleep(1)
-    print(Test.Health, "Health")
+    print(Underpaid_NHS_Worker.Health, "Health")
     time.sleep(1)
-    print(Test.backstory)
+    print(Underpaid_NHS_Worker.Backstory)
     time.sleep(1)
             
-elif Selection == "Test2":
-    Character = Test2
-    print("You Have Selected Test2 as your character")
+elif Selection == "Karen":
+    Character = Karen
+    print(f"You Have Selected {Karen.Name} as your character")
     time.sleep(1)
-    print(Test2.Attack, "Attack")
+    print(Karen.Attack, "Attack")
     time.sleep(1)
-    print(Test2.Defence, "Defence")
+    print(Karen.Defence, "Defence")
     time.sleep(1)
-    print(Test2.Health, "Health")
+    print(Karen.Health, "Health")
     time.sleep(1)
-    print(Test2.backstory)
+    print(Karen.Backstory)
     time.sleep(1)
 
-elif Selection == "Test3":
-    Character = Test3
-    print("You Have Selected Test3 as your character")
+elif Selection == "Redundant_Robert":
+    Character = Redundant_Robert
+    print(f"You Have Selected {Redundant_Robert.Name} as your character")
     time.sleep(1)
-    print(Test3.Attack, "Attack")
+    print(Redundant_Robert.Attack, "Attack")
     time.sleep(1)
-    print(Test3.Defence, "Defence")
+    print(Redundant_Robert.Defence, "Defence")
     time.sleep(1)
-    print(Test3.Health, "Health")
+    print(Redundant_Robert.Health, "Health")
     time.sleep(1)
-    print(Test3.backstory)
+    print(Redundant_Robert.Backstory)
     time.sleep(1)    
             
 
-elif Selection == "Test4":
-    Character = Test4
-    print("You Have Selected Test4 as your character")
+elif Selection == "Pensioner_Pete":
+    Character = Pensioner_Pete
+    print(f"You Have Selected {Pensioner_Pete.Name} as your character")
     time.sleep(1)
-    print(Test4.Attack, "Attack")
+    print(Pensioner_Pete.Attack, "Attack")
     time.sleep(1)
-    print(Test4.Defence, "Defence")
+    print(Pensioner_Pete.Defence, "Defence")
     time.sleep(1)
-    print(Test4.Health, "Health")
+    print(Pensioner_Pete.Health, "Health")
     time.sleep(1)
-    print(Test4.backstory)
+    print(Pensioner_Pete.Backstory)
     time.sleep(1)        
 
-elif Selection == "Test5":
-    Character = Test5
-    print("You Have Selected Test5 as your character")
+elif Selection == "Teenage_Tyrant":
+    Character = Teenage_Tyrant
+    print(f"You Have Selected {Teenage_Tyrant.Name} as your character")
     time.sleep(1)
-    print(Test5.Attack, "Attack")
+    print(Teenage_Tyrant.Attack, "Attack")
     time.sleep(1)
-    print(Test5.Defence, "Defence")
+    print(Teenage_Tyrant.Defence, "Defence")
     time.sleep(1)
-    print(Test5.Health, "Health")
+    print(Teenage_Tyrant.Health, "Health")
     time.sleep(1)
-    print(Test5.backstory)
+    print(Teenage_Tyrant.Backstory)
     time.sleep(1)
 
         
@@ -104,9 +113,15 @@ else:
 
 
 
-#LOCKDOWN I String
-time.sleep(1)
+#LOCKDOWN I Intro
 
+print("These are volatile times...")
+time.sleep(1)
+print("Large segments of the country are placed under lockdown")
+time.sleep(1)
+print("Welcome to lockdown I")
+time.sleep(1)
+print("Due to new restrictions, members of the public have been urged to only leave their homes for essential items")
 
 
 ##########################
@@ -114,10 +129,12 @@ time.sleep(1)
 ##########################
 
 # Items List
-Item_List = [Sword, Helmet]
+Item_List = [Tissue_Roll, Hand_Sanitizer, Used_Mask, Rubber_Gloves, 
+Bin_Bag, Mop, Vaccine, Bleach, News_Paper, Broken_Brush, Costa_Coffee, 
+Subway_Sandwich, Bottle_Of_Wine, Big_Mac, Chocolate_Bar]
 
 # Item_A imported and picked at random.
-Item_A = Item_List[random.randrange(0,2)]
+Item_A = Item_List[random.randrange(0,15)]
 
 print("Pick A Starting Item:")
 time.sleep(1)
@@ -130,6 +147,7 @@ if Item_A.Attack > 0:
     print(Item_A.Attack, "Attack")
     time.sleep(1)
 
+
 elif Item_A.Defence > 0:
     print(Item_A.Defence, "Defence")
     time.sleep(1)
@@ -140,7 +158,7 @@ elif Item_A.Health > 0:
 
 
 # Item_B imported and picked at random.
-Item_B = Item_List[random.randrange(0,2)]
+Item_B = Item_List[random.randrange(0,15)]
 
 # Item_B Name And Stats Printed
 print(f"Item_B is a {Item_B.Name} with the following stats:")
@@ -160,7 +178,7 @@ elif Item_B.Health > 0:
 
 
 # Item_C imported and picked at random.
-Item_C = Item_List[random.randrange(0,2)]
+Item_C = Item_List[random.randrange(0,15)]
 
 # Item_C Name And Stats Printed
 print(f"Item_C is a {Item_C.Name} with the following stats:")
@@ -245,22 +263,24 @@ elif Select_Starting_item == "C":
 ### PATH CHOICE I ###
 #####################
 
+print(f"{Character.Name} decides to have a walk to the local shop")
+time.sleep(1)
 
-Select_First_Path = input("You Stumble Upon Two Forking Paths A And B You Take? ")
+Select_First_Path = input("There are two separate routes A and B to choose from to get to the shop ")
 time.sleep(1)
 
 if Select_First_Path == "A":
-    Enemy_List = [TestA, TestB, TestC] 
-    Enemy = Enemy_List[random.randrange(0,3)]
+    Enemy_List = [Copper, Virus, Maskless_Mark, Coughing_Chris, Nosey_Neighbor, Savage_Dog] 
+    Enemy = Enemy_List[random.randrange(0,6)]
     Enemy.Health += 25
-    print(f"You Slowly Creep down An Dark Alleyway And Suddely {Enemy.Name} Jumps out And Attacks You.")
+    print(f"You Walk to the shop and a {Enemy.Name} jumps out and Attacks You.")
     time.sleep(1)
 
     while Enemy.Health >= 0:
     
         # Enemy Attacking Character 
         Enemy_Attack = Enemy.Attack - Character.Defence
-        print(f"{Enemy.Name} Has Attacked You For {Enemy_Attack} Damage")
+        print(f"A {Enemy.Name} Has Attacked You For {Enemy_Attack} Damage")
         time.sleep(1)
         Character.Health -= Enemy_Attack
         print(f"You Have {Character.Health} Health Remaining")
@@ -268,7 +288,7 @@ if Select_First_Path == "A":
 
         # Character Attacking Enemy
         Character_Attack = Character.Attack - Enemy.Defence
-        print(f"You Attacked {Enemy.Name} For {Character_Attack} Damage")
+        print(f"You Attacked a {Enemy.Name} For {Character_Attack} Damage")
         time.sleep(1)
         Enemy.Health -= Character_Attack
         print(f"{Enemy.Name} Has {Enemy.Health} Health Remaining")
@@ -277,14 +297,14 @@ if Select_First_Path == "A":
 
         # Character Defeated
         if Character.Health <= 0:
-            print(f"You Were Defeated By {Enemy.Name} Game Over")
+            print(f"You Were Defeated By a {Enemy.Name} Game Over")
             time.sleep(1)
             exit()
 
 
         # Character Defeating Enemy
         elif Enemy.Health <= 0:
-            print(f"You have Defeated {Enemy.Name}")
+            print(f"You have Defeated a {Enemy.Name}")
             time.sleep(1)
 
             Increased_Attack = random.randint(0, 10)
@@ -299,25 +319,28 @@ if Select_First_Path == "A":
             print("Your Combat Experience Has Increased Yours Character Stats To:")
             time.sleep(1)
             print(f"{Character.Attack}, Attack")
+            time.sleep(1)
             print(f"{Character.Defence}, Defence")
+            time.sleep(1)
             print(f"{Character.Health}, Health")
+            time.sleep(1)
 
 
 
 
 if Select_First_Path == "B":
-    Enemy_List = [TestA, TestB, TestC] 
-    Enemy = Enemy_List[random.randrange(0,3)] 
+    Enemy_List = [Copper, Virus, Maskless_Mark, Coughing_Chris, Nosey_Neighbor, Savage_Dog] 
+    Enemy = Enemy_List[random.randrange(0,6)] 
     Enemy.Health += 30
 
-    print(f"You Take A Right Down Market Street And You're Confronted By {Enemy.Name}")
+    print(f"You Take A Right Down Market Street And You're Confronted By a {Enemy.Name}")
     time.sleep(1)
 
     while Enemy.Health >= 0:
     
         # Enemy Attacking Character 
         Enemy_Attack = Enemy.Attack - Character.Defence
-        print(f"{Enemy.Name} Has Attacked You For {Enemy_Attack} Damage")
+        print(f" A {Enemy.Name} Has Attacked You For {Enemy_Attack} Damage")
         time.sleep(1)
         Character.Health -= Enemy_Attack
         print(f"You Have {Character.Health} Health Remaining")
@@ -325,7 +348,7 @@ if Select_First_Path == "B":
 
         # Character Attacking Enemy
         Character_Attack = Character.Attack - Enemy.Defence
-        print(f"You Attacked {Enemy.Name} For {Character_Attack} Damage")
+        print(f"You Attacked a {Enemy.Name} For {Character_Attack} Damage")
         time.sleep(1)
         Enemy.Health -= Character_Attack
         print(f"{Enemy.Name} Has {Enemy.Health} Health Remaining")
@@ -333,13 +356,13 @@ if Select_First_Path == "B":
 
         # Character Defeated
         if Character.Health <= 0:
-            print(f"You Were Defeated By {Enemy.Name} Game Over")
+            print(f"You Were Defeated By a {Enemy.Name} Game Over")
             time.sleep(1)
             exit()
 
         # Character Defeating Enemy
         elif Enemy.Health <= 0:
-            print(f"You have Defeated {Enemy.Name}")
+            print(f"You have Defeated a {Enemy.Name}")
             time.sleep(1)
 
             Increased_Attack = random.randint(0, 10)
@@ -363,17 +386,17 @@ if Select_First_Path == "B":
 
 # Second Combat Of Path B
 
-    Enemy_List = [TestA, TestB, TestC] 
-    Enemy = Enemy_List[random.randrange(0,3)]  
+    Enemy_List = [Copper, Virus, Maskless_Mark, Coughing_Chris, Nosey_Neighbor, Savage_Dog] 
+    Enemy = Enemy_List[random.randrange(0,6)]  
     Enemy.Health += 35
 
-    print(f"You Thought It Was All Over When {Enemy.Name} Pounces On You")
+    print(f"You Thought It Was All Over When a {Enemy.Name} Pounces On You")
     
     while Enemy.Health >= 0:
     
         # Enemy Attacking Character 
         Enemy_Attack = Enemy.Attack - Character.Defence
-        print(f"{Enemy.Name} Has Attacked You For {Enemy_Attack} Damage")
+        print(f" A {Enemy.Name} Has Attacked You For {Enemy_Attack} Damage")
         time.sleep(1)
         Character.Health -= Enemy_Attack
         print(f"You Have {Character.Health} Health Remaining")
@@ -381,7 +404,7 @@ if Select_First_Path == "B":
 
         # Character Attacking Enemy
         Character_Attack = Character.Attack - Enemy.Defence
-        print(f"You Attacked {Enemy.Name} For {Character_Attack} Damage")
+        print(f"You Attacked a {Enemy.Name} For {Character_Attack} Damage")
         time.sleep(1)
         Enemy.Health -= Character_Attack
         print(f"{Enemy.Name} Has {Enemy.Health} Remaining")
@@ -389,13 +412,13 @@ if Select_First_Path == "B":
 
         # Character Defeated
         if Character.Health <= 0:
-            print(f"You Were Defeated By {Enemy.Name} Game Over")
+            print(f"You Were Defeated By a {Enemy.Name} Game Over")
             time.sleep(1)
             exit()
 
         # Character Defeating Enemy
         elif Enemy.Health <= 0:
-            print(f"You have Defeated {Enemy.Name}")
+            print(f"You have Defeated a {Enemy.Name}")
             time.sleep(1)
 
             Increased_Attack = random.randint(0, 10)
@@ -424,10 +447,12 @@ if Select_First_Path == "B":
 
 
 # Items List
-Item_List = [Sword, Helmet]
+Item_List = [Tissue_Roll, Hand_Sanitizer, Used_Mask, Rubber_Gloves, 
+Bin_Bag, Mop, Vaccine, Bleach, News_Paper, Broken_Brush, Costa_Coffee, 
+Subway_Sandwich, Bottle_Of_Wine, Big_Mac, Chocolate_Bar]
 
 # Item_A imported and picked at random.
-Item_A = Item_List[random.randrange(0,2)]
+Item_A = Item_List[random.randrange(0,15)]
 
 # Item_A Name And Stats Printed
 print(f"Item_A is a {Item_A.Name} with the following stats:")
@@ -447,7 +472,7 @@ elif Item_A.Health > 0:
 
 
 # Item_B imported and picked at random.
-Item_B = Item_List[random.randrange(0,2)]
+Item_B = Item_List[random.randrange(0,15)]
 
 # Item_B Name And Stats Printed
 print(f"Item_B is a {Item_B.Name} with the following stats:")
@@ -467,7 +492,7 @@ elif Item_B.Health > 0:
 
 
 # Item_C imported and picked at random.
-Item_C = Item_List[random.randrange(0,2)]
+Item_C = Item_List[random.randrange(0,15)]
 
 # Item_C Name And Stats Printed
 print(f"Item_C is a {Item_C.Name} with the following stats:")
@@ -554,7 +579,7 @@ elif Select_Starting_item == "C":
 
 
 
-Boss = Boss1
+Boss = Chris_Whitty
 print(f"You Are Nearing The End Of The First Lockdown But {Boss.Name} Stands In Your Way Prepare For Battle!")
 time.sleep(3)
 print(Boss.Backstory)
@@ -614,7 +639,15 @@ while Boss.Health >= 0:
 
 
 
-# LOCKDOWN II String
+# LOCKDOWN II Intro
+
+print("These are volatile times...")
+time.sleep(1)
+print("Large segments of the country are placed under another lockdown")
+time.sleep(1)
+print("Welcome to lockdown II")
+time.sleep(1)
+print("Due to new restrictions, members of the public have been urged to only leave their homes for essential items")
 time.sleep(1)
 
 
@@ -624,10 +657,12 @@ time.sleep(1)
 ##########################
 
 # Items List
-Item_List = [Sword, Helmet]
+Item_List = [Tissue_Roll, Hand_Sanitizer, Used_Mask, Rubber_Gloves, 
+Bin_Bag, Mop, Vaccine, Bleach, News_Paper, Broken_Brush, Costa_Coffee, 
+Subway_Sandwich, Bottle_Of_Wine, Big_Mac, Chocolate_Bar]
 
 # Item_A imported and picked at random.
-Item_A = Item_List[random.randrange(0,2)]
+Item_A = Item_List[random.randrange(0,15)]
 
 print("Pick An Item:")
 time.sleep(1)
@@ -650,7 +685,7 @@ elif Item_A.Health > 0:
 
 
 # Item_B imported and picked at random.
-Item_B = Item_List[random.randrange(0,2)]
+Item_B = Item_List[random.randrange(0,15)]
 
 # Item_B Name And Stats Printed
 print(f"Item_B is a {Item_B.Name} with the following stats:")
@@ -670,7 +705,7 @@ elif Item_B.Health > 0:
 
 
 # Item_C imported and picked at random.
-Item_C = Item_List[random.randrange(0,2)]
+Item_C = Item_List[random.randrange(0,15)]
 
 # Item_C Name And Stats Printed
 print(f"Item_C is a {Item_C.Name} with the following stats:")
@@ -755,23 +790,25 @@ elif Select_Starting_item == "C":
 ### PATH CHOICE II ###
 ######################
 
-
-Select_First_Path = input("You Stumble Upon Two Forking Paths A And B You Take? ")
+print("You are out and about walking, taking your daily (one!!) hour exercise ")
+time.sleep(1)
+Select_First_Path = input("Which route will you take A or B? ")
 time.sleep(1)
 
 if Select_First_Path == "A":
-    Enemy_List = [TestA, TestB, TestC] 
-    Enemy = Enemy_List[random.randrange(0,3)]
+    Enemy_List = [Copper, Virus, Maskless_Mark, Coughing_Chris, Nosey_Neighbor, Savage_Dog] 
+    Enemy = Enemy_List[random.randrange(0,6)] 
     Enemy.Health += 40
-    
-    print(f"You Slowly Creep down An Dark Alleyway And Suddely {Enemy.Name} Jumps out And Attacks You.")
+
+
+    print(f"You are walking down an alleyway and a {Enemy.Name} appears and you are forced to defend yourself...")
     time.sleep(1)
 
     while Enemy.Health >= 0:
     
         # Enemy Attacking Character 
         Enemy_Attack = Enemy.Attack - Character.Defence
-        print(f"{Enemy.Name} Has Attacked You For {Enemy_Attack} Damage")
+        print(f" A {Enemy.Name} Has Attacked You For {Enemy_Attack} Damage")
         time.sleep(1)
         Character.Health -= Enemy_Attack
         print(f"You Have {Character.Health} Health Remaining")
@@ -779,7 +816,7 @@ if Select_First_Path == "A":
 
         # Character Attacking Enemy
         Character_Attack = Character.Attack - Enemy.Defence
-        print(f"You Attacked {Enemy.Name} For {Character_Attack} Damage")
+        print(f"You Attacked a {Enemy.Name} For {Character_Attack} Damage")
         time.sleep(1)
         Enemy.Health -= Character_Attack
         print(f"{Enemy.Name} Has {Enemy.Health} Remaining")
@@ -787,13 +824,13 @@ if Select_First_Path == "A":
 
         # Character Defeated
         if Character.Health <= 0:
-            print(f"You Were Defeated By {Enemy.Name} Game Over")
+            print(f"You Were Defeated By a {Enemy.Name} Game Over")
             time.sleep(1)
             exit()
 
         # Character Defeating Enemy
         elif Enemy.Health <= 0:
-            print(f"You have Defeated {Enemy.Name}")
+            print(f"You have Defeated a {Enemy.Name}")
             time.sleep(1)
 
             Increased_Attack = random.randint(0, 10)
@@ -817,18 +854,19 @@ if Select_First_Path == "A":
 
 
 if Select_First_Path == "B":
-    Enemy_List = [TestA, TestB, TestC] 
-    Enemy = Enemy_List[random.randrange(0,3)] 
+    Enemy_List = [Copper, Virus, Maskless_Mark, Coughing_Chris, Nosey_Neighbor, Savage_Dog] 
+    Enemy = Enemy_List[random.randrange(0,6)] 
     Enemy.Health += 45
 
-    print(f"You Take A Right Down Market Street And You're Confronted By {Enemy.Name}")
+    print(f"You Take A Right Down Market Street And You're Confronted By a {Enemy.Name} you suddenly feel you are under attack and, therefore, must engage in battle...")
+    
     time.sleep(1)
 
     while Enemy.Health >= 0:
     
         # Enemy Attacking Character 
         Enemy_Attack = Enemy.Attack - Character.Defence
-        print(f"{Enemy.Name} Has Attacked You For {Enemy_Attack} Damage")
+        print(f" A {Enemy.Name} Has Attacked You For {Enemy_Attack} Damage")
         time.sleep(1)
         Character.Health -= Enemy_Attack
         print(f"You Have {Character.Health} Health Remaining")
@@ -836,7 +874,7 @@ if Select_First_Path == "B":
 
         # Character Attacking Enemy
         Character_Attack = Character.Attack - Enemy.Defence
-        print(f"You Attacked {Enemy.Name} For {Character_Attack} Damage")
+        print(f"You Attacked a {Enemy.Name} For {Character_Attack} Damage")
         time.sleep(1)
         Enemy.Health -= Character_Attack
         print(f"{Enemy.Name} Has {Enemy.Health} Remaining")
@@ -844,13 +882,13 @@ if Select_First_Path == "B":
 
         # Character Defeated
         if Character.Health <= 0:
-            print(f"You Were Defeated By {Enemy.Name} Game Over")
+            print(f"You Were Defeated By a {Enemy.Name} Game Over")
             time.sleep(1)
             exit()
 
         # Character Defeating Enemy
         elif Enemy.Health <= 0:
-            print(f"You have Defeated {Enemy.Name}")
+            print(f"You have Defeated a {Enemy.Name}")
             time.sleep(1)
 
             Increased_Attack = random.randint(0, 10)
@@ -874,16 +912,16 @@ if Select_First_Path == "B":
 
 # Second Combat Of Path B
 
-    Enemy_List = [TestA, TestB, TestC] 
-    Enemy = Enemy_List[random.randrange(0,3)]  
+    Enemy_List = [Copper, Virus, Maskless_Mark, Coughing_Chris, Nosey_Neighbor, Savage_Dog] 
+    Enemy = Enemy_List[random.randrange(0,6)]  
     Enemy.Health += 50
-    print(f"You Thought It Was All Over When {Enemy.Name} Pounces On You")
+    print(f"You Thought It Was All Over When {Enemy.Name} Squares up to You")
     
     while Enemy.Health >= 0:
     
         # Enemy Attacking Character 
         Enemy_Attack = Enemy.Attack - Character.Defence
-        print(f"{Enemy.Name} Has Attacked You For {Enemy_Attack} Damage")
+        print(f" A {Enemy.Name} Has Attacked You For {Enemy_Attack} Damage")
         time.sleep(1)
         Character.Health -= Enemy_Attack
         print(f"You Have {Character.Health} Health Remaining")
@@ -891,7 +929,7 @@ if Select_First_Path == "B":
 
         # Character Attacking Enemy
         Character_Attack = Character.Attack - Enemy.Defence
-        print(f"You Attacked {Enemy.Name} For {Character_Attack} Damage")
+        print(f"You Attacked a {Enemy.Name} For {Character_Attack} Damage")
         time.sleep(1)
         Enemy.Health -= Character_Attack
         print(f"{Enemy.Name} Has {Enemy.Health} Remaining")
@@ -899,13 +937,13 @@ if Select_First_Path == "B":
 
         # Character Defeated
         if Character.Health <= 0:
-            print(f"You Were Defeated By {Enemy.Name} Game Over")
+            print(f"You Were Defeated By a {Enemy.Name} Game Over")
             time.sleep(1)
             exit()
 
         # Character Defeating Enemy
         elif Enemy.Health <= 0:
-            print(f"You have Defeated {Enemy.Name}")
+            print(f"You have Defeated a {Enemy.Name}")
             time.sleep(1)
 
             Increased_Attack = random.randint(0, 10)
@@ -934,10 +972,12 @@ if Select_First_Path == "B":
 
 
 # Items List
-Item_List = [Sword, Helmet]
+Item_List = [Tissue_Roll, Hand_Sanitizer, Used_Mask, Rubber_Gloves, 
+Bin_Bag, Mop, Vaccine, Bleach, News_Paper, Broken_Brush, Costa_Coffee, 
+Subway_Sandwich, Bottle_Of_Wine, Big_Mac, Chocolate_Bar]
 
 # Item_A imported and picked at random.
-Item_A = Item_List[random.randrange(0,2)]
+Item_A = Item_List[random.randrange(0,15)]
 
 # Item_A Name And Stats Printed
 print(f"Item_A is a {Item_A.Name} with the following stats:")
@@ -957,7 +997,7 @@ elif Item_A.Health > 0:
 
 
 # Item_B imported and picked at random.
-Item_B = Item_List[random.randrange(0,2)]
+Item_B = Item_List[random.randrange(0,15)]
 
 # Item_B Name And Stats Printed
 print(f"Item_B is a {Item_B.Name} with the following stats:")
@@ -977,7 +1017,7 @@ elif Item_B.Health > 0:
 
 
 # Item_C imported and picked at random.
-Item_C = Item_List[random.randrange(0,2)]
+Item_C = Item_List[random.randrange(0,15)]
 
 # Item_C Name And Stats Printed
 print(f"Item_C is a {Item_C.Name} with the following stats:")
@@ -1064,8 +1104,8 @@ elif Select_Starting_item == "C":
 
 
 
-Boss = Boss2
-print(f"You Are Nearing The End Of The Second Lockdown But {Boss.Name} Stands In Your Way Prepare For Battle!")
+Boss = Matt_Hancock
+print(f"You Are Nearing The End Of The Second Lockdown But {Boss.Name} stands in you way, time to sort him out")
 time.sleep(3)
 print(Boss.Backstory)
 time.sleep(3)
@@ -1097,7 +1137,7 @@ while Boss.Health >= 0:
 
         # Boss Defeated
         elif Boss.Health <= 0:
-            print(f"You have Smited {Boss.Name}")
+            print(f"You have slain {Boss.Name}")
             time.sleep(1)
             Increased_Attack = random.randint(0, 10)
             Increased_Defence =  random.randint(0, 10)
@@ -1125,7 +1165,15 @@ while Boss.Health >= 0:
 
 
 
-# LOCKDOWN III String
+# LOCKDOWN III Intro
+
+print("These are volatile times...")
+time.sleep(1)
+print("Large segments of the country are placed under another (another) lockdown")
+time.sleep(1)
+print("Welcome to lockdown III")
+time.sleep(1)
+print("Due to new restrictions, members of the public have been urged to only leave their homes for essential items")
 time.sleep(1)
 
 
@@ -1137,10 +1185,12 @@ time.sleep(1)
 
 
 # Items List
-Item_List = [Sword, Helmet]
+Item_List = [Tissue_Roll, Hand_Sanitizer, Used_Mask, Rubber_Gloves, 
+Bin_Bag, Mop, Vaccine, Bleach, News_Paper, Broken_Brush, Costa_Coffee, 
+Subway_Sandwich, Bottle_Of_Wine, Big_Mac, Chocolate_Bar]
 
 # Item_A imported and picked at random.
-Item_A = Item_List[random.randrange(0,2)]
+Item_A = Item_List[random.randrange(0,15)]
 
 print("Pick An Item:")
 time.sleep(1)
@@ -1163,7 +1213,7 @@ elif Item_A.Health > 0:
 
 
 # Item_B imported and picked at random.
-Item_B = Item_List[random.randrange(0,2)]
+Item_B = Item_List[random.randrange(0,15)]
 
 # Item_B Name And Stats Printed
 print(f"Item_B is a {Item_B.Name} with the following stats:")
@@ -1183,7 +1233,7 @@ elif Item_B.Health > 0:
 
 
 # Item_C imported and picked at random.
-Item_C = Item_List[random.randrange(0,2)]
+Item_C = Item_List[random.randrange(0,15)]
 
 # Item_C Name And Stats Printed
 print(f"Item_C is a {Item_C.Name} with the following stats:")
@@ -1269,22 +1319,22 @@ elif Select_Starting_item == "C":
 #######################
 
 
-Select_First_Path = input("You Stumble Upon Two Forking Paths A And B You Take? ")
+Select_First_Path = input("You are on your way into an illegal rave which entrance will you take A or B? ")
 time.sleep(1)
 
 if Select_First_Path == "A":
-    Enemy_List = [TestA, TestB, TestC] 
-    Enemy = Enemy_List[random.randrange(0,3)]
+    Enemy_List = [Copper, Virus, Maskless_Mark, Coughing_Chris, Nosey_Neighbor, Savage_Dog] 
+    Enemy = Enemy_List[random.randrange(0,6)]
     Enemy.Health += 55
-
-    print(f"You Slowly Creep down An Dark Alleyway And Suddely {Enemy.Name} Jumps out And Attacks You.")
+    
+    print(f"You enter through the backdoor when a {Enemy.Name} asks you for a light.")
     time.sleep(1)
 
     while Enemy.Health >= 0:
     
         # Enemy Attacking Character 
         Enemy_Attack = Enemy.Attack - Character.Defence
-        print(f"{Enemy.Name} Has Attacked You For {Enemy_Attack} Damage")
+        print(f" A {Enemy.Name} Has Attacked You For {Enemy_Attack} Damage")
         time.sleep(1)
         Character.Health -= Enemy_Attack
         print(f"You Have {Character.Health} Health Remaining")
@@ -1292,7 +1342,7 @@ if Select_First_Path == "A":
 
         # Character Attacking Enemy
         Character_Attack = Character.Attack - Enemy.Defence
-        print(f"You Attacked {Enemy.Name} For {Character_Attack} Damage")
+        print(f"You Attacked a {Enemy.Name} For {Character_Attack} Damage")
         time.sleep(1)
         Enemy.Health -= Character_Attack
         print(f"{Enemy.Name} Has {Enemy.Health} Remaining")
@@ -1300,13 +1350,13 @@ if Select_First_Path == "A":
 
         # Character Defeated
         if Character.Health <= 0:
-            print(f"You Were Defeated By {Enemy.Name} Game Over")
+            print(f"You Were Defeated By a {Enemy.Name} Game Over")
             time.sleep(1)
             exit()
 
         # Character Defeating Enemy
         elif Enemy.Health <= 0:
-            print(f"You have Defeated {Enemy.Name}")
+            print(f"You have Defeated a {Enemy.Name}")
             time.sleep(1)
 
             Increased_Attack = random.randint(0, 10)
@@ -1328,18 +1378,18 @@ if Select_First_Path == "A":
 
 
 if Select_First_Path == "B":
-    Enemy_List = [TestA, TestB, TestC] 
-    Enemy = Enemy_List[random.randrange(0,3)] 
+    Enemy_List = [Copper, Virus, Maskless_Mark, Coughing_Chris, Nosey_Neighbor, Savage_Dog] 
+    Enemy = Enemy_List[random.randrange(0,6)] 
     Enemy.Health += 60
 
-    print(f"You Take A Right Down Market Street And You're Confronted By {Enemy.Name}")
+    print(f"You kick open the fire escape when a {Enemy.Name} is within your 2 metre personal space")
     time.sleep(1)
 
     while Enemy.Health >= 0:
     
         # Enemy Attacking Character 
         Enemy_Attack = Enemy.Attack - Character.Defence
-        print(f"{Enemy.Name} Has Attacked You For {Enemy_Attack} Damage")
+        print(f"A {Enemy.Name} Has Attacked You For {Enemy_Attack} Damage")
         time.sleep(1)
         Character.Health -= Enemy_Attack
         print(f"You Have {Character.Health} Health Remaining")
@@ -1347,7 +1397,7 @@ if Select_First_Path == "B":
 
         # Character Attacking Enemy
         Character_Attack = Character.Attack - Enemy.Defence
-        print(f"You Attacked {Enemy.Name} For {Character_Attack} Damage")
+        print(f"You Attacked a {Enemy.Name} For {Character_Attack} Damage")
         time.sleep(1)
         Enemy.Health -= Character_Attack
         print(f"{Enemy.Name} Has {Enemy.Health} Remaining")
@@ -1355,13 +1405,13 @@ if Select_First_Path == "B":
 
         # Character Defeated
         if Character.Health <= 0:
-            print(f"You Were Defeated By {Enemy.Name} Game Over")
+            print(f"You Were Defeated By a {Enemy.Name} Game Over")
             time.sleep(1)
             exit()
 
         # Character Defeating Enemy
         elif Enemy.Health <= 0:
-            print(f"You have Defeated {Enemy.Name}")
+            print(f"You have Defeated a {Enemy.Name}")
             time.sleep(1)
 
             Increased_Attack = random.randint(0, 10)
@@ -1385,17 +1435,17 @@ if Select_First_Path == "B":
 
 # Second Combat Of Path B
 
-    Enemy_List = [TestA, TestB, TestC] 
-    Enemy = Enemy_List[random.randrange(0,3)]  
+    Enemy_List = [Copper, Virus, Maskless_Mark, Coughing_Chris, Nosey_Neighbor, Savage_Dog] 
+    Enemy = Enemy_List[random.randrange(0,6)]  
     Enemy.Health += 60
 
-    print(f"You Thought It Was All Over When {Enemy.Name} Pounces On You")
+    print(f"You thought it was all over when a {Enemy.Name} starts clapping for the NHS, so you are forced to defend yourself...")
     
     while Enemy.Health >= 0:
     
         # Enemy Attacking Character 
         Enemy_Attack = Enemy.Attack - Character.Defence
-        print(f"{Enemy.Name} Has Attacked You For {Enemy_Attack} Damage")
+        print(f"A {Enemy.Name} Has Attacked You For {Enemy_Attack} Damage")
         time.sleep(1)
         Character.Health -= Enemy_Attack
         print(f"You Have {Character.Health} Health Remaining")
@@ -1403,7 +1453,7 @@ if Select_First_Path == "B":
 
         # Character Attacking Enemy
         Character_Attack = Character.Attack - Enemy.Defence
-        print(f"You Attacked {Enemy.Name} For {Character_Attack} Damage")
+        print(f"You Attacked a {Enemy.Name} For {Character_Attack} Damage")
         time.sleep(1)
         Enemy.Health -= Character_Attack
         print(f"{Enemy.Name} Has {Enemy.Health} Remaining")
@@ -1411,13 +1461,13 @@ if Select_First_Path == "B":
 
         # Character Defeated
         if Character.Health <= 0:
-            print(f"You Were Defeated By {Enemy.Name} Game Over")
+            print(f"You Were Defeated By a {Enemy.Name} Game Over")
             time.sleep(1)
             exit()
 
         # Character Defeating Enemy
         elif Enemy.Health <= 0:
-            print(f"You have Defeated {Enemy.Name}")
+            print(f"You have Defeated a {Enemy.Name}")
             time.sleep(1)
 
             Increased_Attack = random.randint(0, 10)
@@ -1447,10 +1497,12 @@ if Select_First_Path == "B":
 
 
 # Items List
-Item_List = [Sword, Helmet]
+Item_List = [Tissue_Roll, Hand_Sanitizer, Used_Mask, Rubber_Gloves, 
+Bin_Bag, Mop, Vaccine, Bleach, News_Paper, Broken_Brush, Costa_Coffee, 
+Subway_Sandwich, Bottle_Of_Wine, Big_Mac, Chocolate_Bar]
 
 # Item_A imported and picked at random.
-Item_A = Item_List[random.randrange(0,2)]
+Item_A = Item_List[random.randrange(0,15)]
 
 # Item_A Name And Stats Printed
 print(f"Item_A is a {Item_A.Name} with the following stats:")
@@ -1470,7 +1522,7 @@ elif Item_A.Health > 0:
 
 
 # Item_B imported and picked at random.
-Item_B = Item_List[random.randrange(0,2)]
+Item_B = Item_List[random.randrange(0,15)]
 
 # Item_B Name And Stats Printed
 print(f"Item_B is a {Item_B.Name} with the following stats:")
@@ -1490,7 +1542,7 @@ elif Item_B.Health > 0:
 
 
 # Item_C imported and picked at random.
-Item_C = Item_List[random.randrange(0,2)]
+Item_C = Item_List[random.randrange(0,15)]
 
 # Item_C Name And Stats Printed
 print(f"Item_C is a {Item_C.Name} with the following stats:")
@@ -1577,8 +1629,8 @@ elif Select_Starting_item == "C":
 
 
 
-Boss = Boss3
-print(f"You Are Nearing The End Of The Third And Last Lockdown But {Boss.Name} Stands In Your Way Prepare For Battle!")
+Boss = Boris_Johnson
+print(f"You Are Nearing The End Of The Third And Last Lockdown But {Boss.Name} has adviced to stay indoors but go outside")
 time.sleep(3)
 print(Boss.Backstory)
 time.sleep(3)
@@ -1612,4 +1664,4 @@ while Boss.Health >= 0:
             print(f"You have Smited {Boss.Name}")
             time.sleep(1)
             
-            print(f"Congratulations You have Defeated {Boss.Name} And Escaped Lockdown!!!")
+            print(f"Congratulations You have Defeated {Boss.Name} And Escaped Lockdown!!! welcome to tax rises")
